@@ -24,25 +24,25 @@
         registeredEls.push({selector: '.fadeInUp-element', animationClass: 'fadeInUp', onlyOnce: false});
         registeredEls.push({selector: '.fadeInRight-element', animationClass: 'fadeInRight', onlyOnce: true});
 
-        for (let i = 0; i < registeredEls.length; i++) {
-            let eldef = registeredEls[i];
+        for (var i = 0; i < registeredEls.length; i++) {
+            var eldef = registeredEls[i];
             eldef['elements'] = $(eldef.selector).toArray();
         }
 
-        let $window = $(window);
-        let window_height = $window.height();
-        let window_top_position = $window.scrollTop();
-        let window_bottom_position = (window_top_position + window_height);
+        var $window = $(window);
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
 
         function apply_animated_class(elements, delta, animation_classes, onlyOnce) {
 
-            let elementsCopy = elements.slice();
+            var elementsCopy = elements.slice();
 
             $.each(elementsCopy, function () {
-                let element = $(this);
-                let element_height = element.outerHeight();
-                let element_top_position = element.offset().top;
-                let element_bottom_position = (element_top_position + element_height);
+                var element = $(this);
+                var element_height = element.outerHeight();
+                var element_top_position = element.offset().top;
+                var element_bottom_position = (element_top_position + element_height);
 
                 if ((element_bottom_position >= window_top_position) &&
                     (element_top_position <= window_bottom_position)) {
@@ -82,15 +82,17 @@
             window_top_position = $window.scrollTop();
             window_bottom_position = (window_top_position + window_height);
 
-            for (let eldef of registeredEls) {
+
+            for (var i = 0; i < registeredEls.length; i++) {
+                var eldef = registeredEls[i];
                 apply_animated_class(eldef.elements, delta, eldef.animationClass, eldef.onlyOnce);
             }
 
         }
 
 
-        let checking = false;
-        let previousScroll = 0;
+        var checking = false;
+        var previousScroll = 0;
 
         function check_scroll_and_animations() {
             var scroll = $(this).scrollTop();

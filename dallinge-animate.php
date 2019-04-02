@@ -10,6 +10,9 @@ Author: Laetitia Dallinge
 Version: 1.0.0
 Author URI: http://dev.dallinge.ch/
 */
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
 
 
 function dallinge_animate_load_my_scripts()

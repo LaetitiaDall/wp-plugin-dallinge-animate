@@ -36,20 +36,25 @@
 
         function apply_animated_class(elements, delta, animation_classes, onlyOnce) {
 
-            var elementsCopy = elements.slice();
+            $.each(elements, function () {
 
-            $.each(elementsCopy, function () {
                 var element = $(this);
+
+                if (element.hasClass("animation-already-done-once")) {
+                    return;
+                }
+
                 var element_height = element.outerHeight();
                 var element_top_position = element.offset().top;
                 var element_bottom_position = (element_top_position + element_height);
 
                 if ((element_bottom_position >= window_top_position) &&
                     (element_top_position <= window_bottom_position)) {
+
                     if (!element.hasClass("animation-done")) {
 
                         if (onlyOnce) {
-                            elements.splice(elements.indexOf(element), 1);
+                            element.addClass("animation-already-done-once")
                         }
 
                         element
@@ -89,24 +94,27 @@
             }
 
         }
-
-
+		
+		
         var checking = false;
         var previousScroll = 0;
 
-        function check_scroll_and_animations() {
-            var scroll = $(this).scrollTop();
-            var delta = previousScroll - scroll;
-            previousScroll = scroll;
+		function check_scroll_and_animations() {
+            var self = $(this);
+
 
             if (!checking) {
                 checking = true;
                 setTimeout(function () {
+                    var scroll = $(this).scrollTop();
+                    var delta = previousScroll - scroll;
+                    previousScroll = scroll;
                     check_if_in_view(delta);
                     checking = false;
                 }, 100);
             }
         }
+
 
         $window.on('scroll resize', function (ev) {
             check_scroll_and_animations();

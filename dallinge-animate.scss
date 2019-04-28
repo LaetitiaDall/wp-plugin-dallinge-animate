@@ -108,19 +108,19 @@
 }
 
 .fadeInUp {
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   -webkit-animation-name: fadeInUp;
 
-  -moz-animation-duration: 1s;
+  -moz-animation-duration: 0.8s;
   -moz-animation-fill-mode: both;
   -moz-animation-name: fadeInUp;
 
-  -o-animation-duration: 1s;
+  -o-animation-duration: 0.8s;
   -o-animation-fill-mode: both;
   -o-animation-name: fadeInUp;
 
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-fill-mode: both;
   animation-name: fadeInUp;
 
@@ -283,6 +283,70 @@
   }
 }
 
+
+@keyframes fadeInLeft {
+  from {
+
+    -webkit-transform: translate3d(-10px, 0, 0);
+    -o-transform: translate3d(-10px, 0, 0);
+    -moz-transform: translate3d(-10px, 0, 0);
+
+    opacity: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  to {
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+
+    -webkit-transform: translate3d(-10px, 0, 0);
+    -o-transform: translate3d(-10px, 0, 0);
+    -moz-transform: translate3d(-10px, 0, 0);
+    opacity: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  to {
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes fadeInLeft {
+  from {
+
+    -webkit-transform: translate3d(-10px, 0, 0);
+    -o-transform: translate3d(-10px, 0, 0);
+    -moz-transform: translate3d(-10px, 0, 0);
+    opacity: 0;
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  to {
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
 @keyframes nothing {
   from {
     opacity: 1;
@@ -315,21 +379,40 @@
 }
 
 .fadeInRight {
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-fill-mode: both;
   animation-name: fadeInRight;
 
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 0.8s;
   -webkit-animation-fill-mode: both;
   -webkit-animation-name: fadeInRight;
 }
 
 .fadeInRight.animation-reverse {
-  animation-name: nothing;
-  animation-duration: 0s;
+  animation-name: fadeInLeft;
+  animation-duration: 0.8s;
 
-  -webkit-animation-name: nothing;
-  -webkit-animation-duration: 0s;
+  -webkit-animation-name: fadeInLeft;
+  -webkit-animation-duration: 0.8s;
+
+}
+
+.fadeInLeft {
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+  animation-name: fadeInLeft;
+
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-name: fadeInLeft;
+}
+
+.fadeInLeft.animation-reverse {
+  animation-name: fadeInRight;
+  animation-duration: 0.8s;
+
+  -webkit-animation-name: fadeInRight;
+  -webkit-animation-duration: 0.8s;
 
 }
 

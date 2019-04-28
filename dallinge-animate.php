@@ -19,7 +19,7 @@ function dallinge_animate_load_my_scripts()
 {
     dallinge_scss_register_file(plugin_dir_path(__FILE__). 'dallinge-animate.scss');
     wp_enqueue_script('jquery');
-    wp_enqueue_script('dallinge_animate_script', plugin_dir_url(__FILE__) . 'dallinge-animate.js');
+    wp_enqueue_script('dallinge_animate_script', plugin_dir_url(__FILE__) . 'dallinge-animate.js', array(), 16);
 }
 
 add_action('wp_enqueue_scripts', 'dallinge_animate_load_my_scripts');

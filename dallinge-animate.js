@@ -96,9 +96,19 @@
                         .removeClass("animating")
                         .removeClass("animation-done");
 
-                    if (!onlyOnce) {
+                    if (!onlyOnce && !element.hasClass("animation-already-done-once")) {
                         element.css("opacity", 0);
                     }
+
+                    if (delta <= 0){
+                        // It's going down
+                        if (element_bottom_position <= window_top_position){
+                            // it's above
+                            element.addClass("animation-done");
+                        }
+                    }
+
+
                 }
 
             });

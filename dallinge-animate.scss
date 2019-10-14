@@ -156,7 +156,6 @@
   }
 }
 
-
 @-moz-keyframes fadeIn {
   from {
     opacity: 0;
@@ -166,7 +165,6 @@
     opacity: 1;
   }
 }
-
 
 @keyframes fadeOut {
   from {
@@ -187,7 +185,6 @@
     opacity: 0;
   }
 }
-
 
 @-moz-keyframes fadeOut {
   from {
@@ -242,7 +239,6 @@
   }
 }
 
-
 @-webkit-keyframes fadeInRight {
   from {
 
@@ -282,7 +278,6 @@
     transform: translate3d(0, 0, 0);
   }
 }
-
 
 @keyframes fadeInLeft {
   from {
@@ -346,7 +341,6 @@
   }
 }
 
-
 @keyframes nothing {
   from {
     opacity: 1;
@@ -356,7 +350,6 @@
     opacity: 1;
   }
 }
-
 
 @-webkit-keyframes nothing {
   from {

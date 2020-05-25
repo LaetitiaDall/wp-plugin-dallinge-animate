@@ -427,3 +427,15 @@
   opacity: 1 !important;
 }
 
+.bouncing {
+  animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
